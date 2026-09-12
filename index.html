@@ -76,6 +76,13 @@
     nav a { font-size:14px; font-weight:500; }
     nav a:hover { color:var(--gold); }
 
+    .mobile-menu-toggle { display:none; flex-direction:column; justify-content:center; align-items:center; gap:5px; width:40px; height:40px; background:transparent; border:1px solid var(--line); border-radius:8px; cursor:pointer; padding:0; flex-shrink:0; }
+    .mobile-menu-toggle span { display:block; width:20px; height:2px; background:var(--ink); border-radius:2px; transition:.25s ease; }
+    .mobile-menu-toggle.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+    .mobile-menu-toggle.open span:nth-child(2) { opacity:0; }
+    .mobile-menu-toggle.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+    .mobile-nav { display:none; }
+
     .btn { font-family:'DM Sans', sans-serif; display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:48px; padding:0 24px; border-radius:8px; font-weight:600; border:1px solid transparent; transition:.22s ease; white-space:nowrap; }
     @media (max-width:680px) { .btn { white-space:normal; } }
     .btn:hover { transform:translateY(-1px); }
@@ -379,6 +386,15 @@
     }
     @media (max-width:900px) {
       nav ul { display:none; }
+      .mobile-menu-toggle { display:flex; }
+      .mobile-nav { display:flex; flex-direction:column; position:fixed; top:76px; left:0; right:0; background:#fff; border-bottom:1px solid var(--line); box-shadow:0 18px 40px rgba(17,23,34,.10); max-height:0; overflow:hidden; opacity:0; transition:max-height .3s ease, opacity .25s ease; z-index:49; padding:0 24px; }
+      .mobile-nav.open { max-height:calc(100vh - 76px); overflow-y:auto; opacity:1; padding:16px 24px 24px; }
+      .mobile-nav ul { list-style:none; display:flex; flex-direction:column; }
+      .mobile-nav ul li { border-bottom:1px solid var(--line); }
+      .mobile-nav ul li:last-child { border-bottom:none; }
+      .mobile-nav ul li a { display:block; padding:14px 2px; font-size:15px; font-weight:600; color:var(--ink); }
+      .mobile-nav ul li a:hover { color:var(--gold); }
+      .mobile-nav .btn { margin-top:14px; width:100%; }
       .credential-strip { grid-template-columns:repeat(2,1fr); }
       .journey-grid, .support-cards { grid-template-columns:1fr 1fr; }
       .journey-step::after { display:none; }
@@ -471,7 +487,22 @@
       </ul>
     </nav>
     <a href="#contact" class="btn btn-primary">Request the Assessment →</a>
+    <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav" onclick="toggleMobileMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
   </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="#pressure">About</a></li>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#outcomes">Services</a></li>
+      <li><a href="#selected-engagements">Case Studies</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#founder">Founder</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-primary">Request the Assessment →</a>
+  </nav>
 </header>
 
 <main id="top">
@@ -1071,6 +1102,18 @@
         body.classList.add('open');
       }
     }
+    function toggleMobileMenu(btn) {
+      var nav = document.getElementById('mobile-nav');
+      var isOpen = nav.classList.toggle('open');
+      btn.classList.toggle('open', isOpen);
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+    document.querySelectorAll('#mobile-nav a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        document.getElementById('mobile-nav').classList.remove('open');
+        document.querySelector('.mobile-menu-toggle').classList.remove('open');
+      });
+    });
   </script>
 
   <section class="section-alt" id="impact">
