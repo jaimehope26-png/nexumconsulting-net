@@ -399,6 +399,65 @@
       section { padding:56px 0; }
     }
   </style>
+
+  <style>
+    /* ---- Video pivot band: Founder Perspective -> new "Our Perspective" band ---- */
+    .video-band {
+      position:relative;
+      min-height:640px;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      background:var(--dark);
+      color:#fff;
+    }
+    .video-band video {
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      object-fit:cover;
+      z-index:0;
+    }
+    .video-band::before {
+      content:"";
+      position:absolute; inset:0;
+      background:
+        linear-gradient(180deg, rgba(16,24,32,.30) 0%, rgba(16,24,32,.72) 75%, rgba(16,24,32,.92) 100%),
+        linear-gradient(90deg, rgba(16,24,32,.55) 0%, rgba(16,24,32,.05) 55%);
+      z-index:1;
+    }
+    .video-inner { position:relative; z-index:2; padding:110px 0; }
+    .video-eyebrow { display:flex; align-items:center; gap:12px; color:var(--gold); text-transform:uppercase; letter-spacing:2px; font-size:12px; font-weight:850; margin-bottom:22px; }
+    .video-eyebrow::before { content:""; width:36px; height:2px; background:var(--gold); }
+    .video-band h2 {
+      font-family:'Space Mono', monospace;
+      font-size:clamp(30px, 4.4vw, 54px);
+      line-height:1.15;
+      font-weight:700;
+      max-width:720px;
+      margin-bottom:24px;
+      letter-spacing:-.5px;
+    }
+    .video-band p {
+      max-width:540px;
+      font-size:17px;
+      color:rgba(255,255,255,.82);
+      margin-bottom:34px;
+    }
+    .video-actions { display:flex; gap:16px; flex-wrap:wrap; }
+    .mute-toggle {
+      position:absolute; bottom:22px; right:22px; z-index:3;
+      background:rgba(16,24,32,.55); border:1px solid rgba(255,255,255,.35); color:#fff;
+      font-family:'DM Sans', sans-serif; font-size:12px; letter-spacing:.5px;
+      padding:8px 14px; border-radius:999px; cursor:pointer; backdrop-filter:blur(2px);
+    }
+    @media (max-width:720px) {
+      .video-band { min-height:560px; }
+      .video-inner { padding:76px 0; }
+      .video-actions { flex-direction:column; align-items:stretch; }
+      .video-actions .btn { width:100%; white-space:normal; text-align:center; }
+      .form-row { grid-template-columns:1fr; }
+    }
+  </style>
 </head>
 <body>
 
@@ -415,6 +474,22 @@
 </header>
 
 <main id="top">
+  <section class="video-band">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="summit-climb_3.mp4" type="video/mp4">
+    </video>
+    <div class="container video-inner">
+      <div class="video-eyebrow">Our Perspective</div>
+      <h2>Every Constraint Has a Summit. We Build the Path to It.</h2>
+      <p>Growth creates pressure. Pressure without discipline becomes risk. Nexum exists to close that gap — before it shows up in your numbers.</p>
+      <div class="video-actions">
+        <a href="#contact" class="btn btn-primary">Start with a Finance Readiness Assessment →</a>
+        <a href="#approach" class="btn btn-secondary" style="border-color:rgba(255,255,255,.55); color:#fff;">See Our Approach ›</a>
+      </div>
+    </div>
+    <button class="mute-toggle" onclick="const v=this.parentElement.querySelector('video'); v.muted=!v.muted; this.textContent=v.muted?'&#128263; Unmute':'&#128266; Mute';">&#128263; Unmute</button>
+  </section>
+
   <section class="hero">
     <div class="container hero-grid">
       <div>
