@@ -461,12 +461,6 @@
       margin-bottom:34px;
     }
     .video-actions { display:flex; gap:16px; flex-wrap:wrap; }
-    .mute-toggle {
-      position:absolute; bottom:22px; right:22px; z-index:3;
-      background:rgba(16,24,32,.55); border:1px solid rgba(255,255,255,.35); color:#fff;
-      font-family:'DM Sans', sans-serif; font-size:12px; letter-spacing:.5px;
-      padding:8px 14px; border-radius:999px; cursor:pointer; backdrop-filter:blur(2px);
-    }
     @media (max-width:720px) {
       .video-band { min-height:560px; }
       .video-inner { padding:76px 0; }
@@ -519,7 +513,6 @@
         <a href="#approach" class="btn btn-secondary" style="border-color:rgba(255,255,255,.55); color:#fff;">See Our Approach ›</a>
       </div>
     </div>
-    <button class="mute-toggle" onclick="const v=this.parentElement.querySelector('video'); v.muted=!v.muted; this.textContent=v.muted?'&#128263; Unmute':'&#128266; Mute';">&#128263; Unmute</button>
   </section>
 
   <section class="hero">
