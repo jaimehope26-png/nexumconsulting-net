@@ -469,6 +469,34 @@
       .form-row { grid-template-columns:1fr; }
     }
   </style>
+
+  <style>
+    /* Proof section: experience (left) and selected engagements (right), directly after the video band */
+    .proof { background:var(--soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:72px 0 80px; }
+    .proof h2 { font-family:'Space Mono', monospace; font-size:clamp(22px,2.3vw,30px); line-height:1.12; letter-spacing:-.8px; font-weight:700; margin-bottom:24px; }
+    .proof-split { display:grid; grid-template-columns:minmax(0,5fr) minmax(0,7fr); gap:28px; align-items:stretch; margin-bottom:28px; }
+    .proof-col { background:#fff; border:1px solid var(--line); border-radius:18px; padding:32px; display:flex; flex-direction:column; scroll-margin-top:100px; }
+    .logo-tiles { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:12px; overflow:hidden; flex:1; }
+    .logo-tiles .company-logo { background:#fff; min-height:112px; padding:18px; }
+    .logo-tiles .company-logo svg { max-height:46px; max-width:78%; }
+    .proof .case-tabs { display:grid; grid-template-columns:1fr 1fr; gap:14px; border:none; border-radius:0; overflow:visible; background:transparent; margin:0; flex:1; }
+    .proof .case-tab { display:flex; flex-direction:column; border:1px solid var(--line); border-radius:14px; padding:20px; }
+    .proof .case-tab:last-child { border-right:1px solid var(--line); }
+    .proof .case-tab.active { border-color:var(--dark); }
+    .proof .case-tab .ct-metric { order:-1; margin:0 0 12px; font-size:clamp(28px,2.8vw,38px); letter-spacing:-1.5px; line-height:1; }
+    .proof .case-tab .ct-label { font-size:10px; }
+    .proof .case-tab .ct-title { font-size:12px; }
+    @media (max-width:1100px) {
+      .proof-split { grid-template-columns:1fr; }
+      .proof .case-tab { border-bottom:1px solid var(--line); }
+    }
+    @media (max-width:680px) {
+      .proof { padding:52px 0 56px; }
+      .proof-col { padding:22px; }
+      .proof .case-tabs { grid-template-columns:1fr; }
+      .logo-tiles .company-logo { min-height:88px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -515,15 +543,255 @@
     </div>
   </section>
 
-  <section class="section-alt" id="impact">
+
+  <section class="proof" id="impact">
     <div class="container">
-      <div class="section-header" style="text-align:left;margin-left:0;"><div class="section-kicker">Proven Impact</div><h2>Experience across leading organizations.</h2></div>
-      <div class="impact-grid">
-        <article class="impact-card"><div class="company-logo pwc"><svg width="170" height="60" viewBox="0 0 170 60"><rect x="48" y="18" width="28" height="11" fill="#d04a02"/><rect x="63" y="8" width="35" height="18" fill="#f58025"/><rect x="84" y="0" width="40" height="24" fill="#ffb600"/><text x="0" y="52" font-family="Helvetica,Arial,sans-serif" font-size="44" font-weight="700" fill="#111">pwc</text></svg></div><p>Supported strategy and transformation initiatives across multiple industries, improving operational efficiency and accelerating growth.</p></article>
-        <article class="impact-card"><div class="company-logo brookfield"><svg width="250" height="60" viewBox="0 0 250 60"><text x="0" y="44" font-family="Helvetica,Arial,sans-serif" font-size="42" font-weight="700" letter-spacing="-.8" fill="#0b3767">Brookfield</text></svg></div><p>Advised portfolio companies on value creation, operating model optimization, and performance improvement.</p></article>
-        <article class="impact-card"><div class="company-logo gamestop"><svg width="320" height="78" viewBox="0 0 320 78"><text x="0" y="58" font-family="Impact,Arial Black,Helvetica,Arial,sans-serif" font-size="72" font-weight="900" letter-spacing="-4" fill="#111">Game</text><text x="154" y="58" font-family="Impact,Arial Black,Helvetica,Arial,sans-serif" font-size="72" font-weight="900" letter-spacing="-4" fill="#ff1f1f">Stop</text></svg></div><p>Partnered on strategic planning and financial transformation to enhance profitability and strengthen long-term value.</p></article>
-        <article class="impact-card"><div class="company-logo celanese"><svg width="250" height="64" viewBox="0 0 250 64"><g transform="translate(2,11)"><path d="M36.5 8.5C28.5 1.2 15.2 2.3 7.4 10.7C-.2 18.9.7 31.6 9.6 38.2C18.6 44.9 32.4 42.8 39.2 33.8C44.9 26.2 43.7 15.1 36.5 8.5Z" fill="#f26a21"/><path d="M5.7 23.7C13.6 13.4 27.7 9.8 39.6 15.7" fill="none" stroke="#fff" stroke-width="5.2" stroke-linecap="round"/><path d="M10.9 31.9C19.3 36.2 29.5 34.4 36.4 27.8" fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round"/></g><text x="50" y="42" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="700" letter-spacing="-.85" fill="#111">Celanese</text></svg></div><p>Enabled organizational alignment and cost optimization initiatives to drive productivity and sustainable growth.</p></article>
+      <div class="proof-split">
+        <div class="proof-col">
+          <div class="section-kicker">Proven Impact</div>
+          <h2>Experience across leading organizations.</h2>
+          <div class="logo-tiles">
+            <div class="company-logo pwc"><svg width="170" height="60" viewBox="0 0 170 60"><rect x="48" y="18" width="28" height="11" fill="#d04a02"/><rect x="63" y="8" width="35" height="18" fill="#f58025"/><rect x="84" y="0" width="40" height="24" fill="#ffb600"/><text x="0" y="52" font-family="Helvetica,Arial,sans-serif" font-size="44" font-weight="700" fill="#111">pwc</text></svg></div>
+            <div class="company-logo brookfield"><svg width="250" height="60" viewBox="0 0 250 60"><text x="0" y="44" font-family="Helvetica,Arial,sans-serif" font-size="42" font-weight="700" letter-spacing="-.8" fill="#0b3767">Brookfield</text></svg></div>
+            <div class="company-logo gamestop"><svg width="320" height="78" viewBox="0 0 320 78"><text x="0" y="58" font-family="Impact,Arial Black,Helvetica,Arial,sans-serif" font-size="72" font-weight="900" letter-spacing="-4" fill="#111">Game</text><text x="154" y="58" font-family="Impact,Arial Black,Helvetica,Arial,sans-serif" font-size="72" font-weight="900" letter-spacing="-4" fill="#ff1f1f">Stop</text></svg></div>
+            <div class="company-logo celanese"><svg width="250" height="64" viewBox="0 0 250 64"><g transform="translate(2,11)"><path d="M36.5 8.5C28.5 1.2 15.2 2.3 7.4 10.7C-.2 18.9.7 31.6 9.6 38.2C18.6 44.9 32.4 42.8 39.2 33.8C44.9 26.2 43.7 15.1 36.5 8.5Z" fill="#f26a21"/><path d="M5.7 23.7C13.6 13.4 27.7 9.8 39.6 15.7" fill="none" stroke="#fff" stroke-width="5.2" stroke-linecap="round"/><path d="M10.9 31.9C19.3 36.2 29.5 34.4 36.4 27.8" fill="none" stroke="#fff" stroke-width="4.2" stroke-linecap="round"/></g><text x="50" y="42" font-family="Arial,Helvetica,sans-serif" font-size="34" font-weight="700" letter-spacing="-.85" fill="#111">Celanese</text></svg></div>
+          </div>
+        </div>
+        <div class="proof-col" id="selected-engagements">
+          <div class="section-kicker">Selected Engagements</div>
+          <h2>Four engagements. Real stakes. Measurable outcomes.</h2>
+          <div class="case-tabs" role="tablist">
+        <button class="case-tab active" role="tab" aria-selected="true" data-panel="case1" onclick="switchCase(this,'case1')">
+          <span class="ct-label">Retail Finance</span>
+          <span class="ct-title">Transforming Retail Finance to Drive Strategic Decisions &amp; ROI</span>
+          <span class="ct-metric">$3M</span>
+        </button>
+        <button class="case-tab" role="tab" aria-selected="false" data-panel="case2" onclick="switchCase(this,'case2')">
+          <span class="ct-label">Cost Optimization</span>
+          <span class="ct-title">Driving Profitability Through Indirect Spend Optimization</span>
+          <span class="ct-metric">$2M+</span>
+        </button>
+        <button class="case-tab" role="tab" aria-selected="false" data-panel="case3" onclick="switchCase(this,'case3')">
+          <span class="ct-label">Finance Integration</span>
+          <span class="ct-title">Designing a High-Impact Finance Structure After a Spinoff</span>
+          <span class="ct-metric">$95B</span>
+        </button>
+        <button class="case-tab" role="tab" aria-selected="false" data-panel="case4" onclick="switchCase(this,'case4')">
+          <span class="ct-label">Controls &amp; Risk</span>
+          <span class="ct-title">Remediating Material Weaknesses with Bottom-Line Impact</span>
+          <span class="ct-metric">&lt;2 Yrs</span>
+        </button>
       </div>
+        </div>
+      </div>
+      <div class="case-panels">
+
+        <!-- CASE 1 -->
+        <div class="case-panel active" id="case1" role="tabpanel">
+          <div class="cp-stat">
+            <div>
+              <div class="cp-tag">Retail Finance Transformation</div>
+              <div class="cp-metric">$3M</div>
+              <div class="cp-metric-label">Board-approved transformation<br>investment secured</div>
+            </div>
+            <div class="cp-badges">
+              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">ROI Level</span><span class="cp-badge-val">High</span></div>
+              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Complexity</span><span class="cp-badge-val">High</span></div>
+              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Stakeholders</span><span class="cp-badge-val">CFO · CAO · CEO</span></div>
+              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Focus Area</span><span class="cp-badge-val">Finance Transformation</span></div>
+            </div>
+          </div>
+          <div class="cp-body">
+            <div class="cp-title">Transforming Retail Finance to Drive Strategic Decisions and ROI</div>
+            <div class="cp-sections">
+              <div class="cp-section">
+                <div class="cp-section-head open" onclick="toggleSection(this)">
+                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-alert-triangle"></i></div><span class="cp-section-name">The Challenge</span></div>
+                  <span class="cp-section-arrow">&#8964;</span>
+                </div>
+                <div class="cp-section-body open"><p>A retail enterprise experiencing rapid growth faced critical challenges within its finance function, impacting operational efficiency and strategic decision-making. Key concerns included data integrity issues across disparate systems, manual paper-based processes creating operational bottlenecks, and legacy reporting capabilities misaligned with the CFO's strategic vision.</p></div>
+              </div>
+              <div class="cp-section">
+                <div class="cp-section-head" onclick="toggleSection(this)">
+                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-user-check"></i></div><span class="cp-section-name">What I Did</span></div>
+                  <span class="cp-section-arrow">&#8964;</span>
+                </div>
+                <div class="cp-section-body"><p>I identified a strategic misalignment between the CFO's expectations and ongoing finance projects. Collaborating closely with the CFO and CAO, I clarified strategic objectives and uncovered barriers affecting financial data. Through stakeholder engagement across departments, I mapped the organizational structure and analyzed current processes, systems, and data flows — identifying root causes of inefficiencies and their broader impact on finance strategy.</p></div>
+              </div>
+              <div class="cp-section">
+                <div class="cp-section-head" onclick="toggleSection(this)">
+                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-bulb"></i></div><span class="cp-section-name">The Solution</span></div>
+                  <span class="cp-section-arrow">&#8964;</span>
+                </div>
+                <div class="cp-section-body"><p>The finance portfolio was reassessed and realigned with organizational objectives. This diagnostic provided insights into operational gaps between the CFO's strategic goals and execution capabilities — specifically in human resources, process optimization, technology infrastructure, and data utilization. Findings were proactively presented to the CEO with a clear transformation roadmap.</p></div>
+              </div>
+              <div class="cp-section">
+                <div class="cp-section-head" onclick="toggleSection(this)">
+                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-chart-bar"></i></div><span class="cp-section-name">Impact</span></div>
+                  <span class="cp-section-arrow">&#8964;</span>
+                </div>
+                <div class="cp-section-body"><p>Successfully secured a $3M board-approved capital investment, demonstrating commitment to company-wide transformation and strategic alignment. The initiative established a clear path to eliminating data integrity issues, automating manual processes, and building reporting capabilities aligned with the CFO's long-term vision.</p></div>
+              </div>
+            </div>
+            <a href="/retail-finance-growth-readiness.html" style="display:inline-flex; align-items:center; gap:6px; margin-top:22px; font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; letter-spacing:.02em; color:var(--gold);">Read the full story →</a>
+          </div>
+        </div>
+
+        <!-- CASE 2 -->
+        <div class="case-panel" id="case2" role="tabpanel">
+          <div class="cp-stat">
+            <div>
+              <div class="cp-tag">Indirect Spend Optimization</div>
+              <div class="cp-metric">$2M+</div>
+              <div class="cp-metric-label">T&amp;E surge identified and<br>spend levers unlocked</div>
+            </div>
+            <div class="cp-badges">
+              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">ROI Level</span><span class="cp-badge-val">Moderate</span></div>
+              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Complexity</span><span class="cp-badge-val">High</span></div>
+              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Top Drivers</span><span class="cp-badge-val">Marketing · Logistics · IT</span></div>
+              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Largest Category</span><span class="cp-badge-val">Marketing $100M</span></div>
+            </div>
+          </div>
+          <div class="cp-body">
+            <div class="cp-title">Driving Profitability Through Indirect Spend Optimization</div>
+            <div class="cp-sections">
+              <div class="cp-section">
+                <div class="cp-section-head open" onclick="toggleSection(this)">
+                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-alert-triangle"></i></div><span class="cp-section-name">The Challenge</span></div>
+                  <span class="cp-section-arrow">&#8964;</span>
+                </div>
+                <div class="cp-section-body open"><p>A publicly traded company reported a $2M surge in travel and entertainment (T&amp;E) expenses within a single fiscal year — signaling underlying inefficiencies, weak spend controls, and untapped opportunities for strategic cost optimization.</p></div>
+              </div>
+              <div class="cp-section">
+                <div class="cp-section-head" onclick="toggleSection(this)">
+                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-user-check"></i></div><span class="cp-section-name">What I Did</span></div>
+                  <span class="cp-section-arrow">&#8964;</span>
+                </div>
+                <div class="cp-section-body"><p>Performed an enterprise-wide analysis of indirect spend using detailed data modeling and stakeholder interviews. Findings revealed that Marketing, Logistics, and IT — not T&amp;E — were the primary cost drivers. The resulting insights guided a targeted cost-optimization plan designed to mitigate financial exposure and enhance operational efficiency.</p></div>
+              </div>
+              <div class="cp-section">
+                <div class="cp-section-head" onclick="toggleSection(this)">
+                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-bulb"></i></div><span class="cp-section-name">The Solution</span></div>
+                  <span class="cp-section-arrow">&#8964;</span>
+                </div>
+                <div class="cp-section-body"><p>Leveraging advanced data analytics, the company identified the primary drivers of indirect spending — Marketing ($100M), Logistics ($40M), and IT ($12M). A deep analysis of spend patterns, operational trends, and departmental practices revealed concentrated cost areas and inefficiencies. These insights shaped a focused roadmap to rationalize expenditures and optimize resource allocation.</p></div>
+              </div>
+              <div class="cp-section">
+                <div class="cp-section-head" onclick="toggleSection(this)">
+                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-chart-bar"></i></div><span class="cp-section-name">Impact</span></div>
+                  <span class="cp-section-arrow">&#8964;</span>
+                </div>
+                <div class="cp-section-body"><p>Pinpointed inefficiencies contributing to the $2M T&amp;E surge and executed a vendor-led optimization initiative to standardize processes and strengthen controls. Further identified indirect spend levers across Marketing, Logistics, and IT for additional cost optimization and measurable bottom-line ROI improvement.</p></div>
+              </div>
+            </div>
+            <a href="/indirect-spend-optimization.html" style="display:inline-flex; align-items:center; gap:6px; margin-top:22px; font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; letter-spacing:.02em; color:var(--gold);">Read the full story →</a>
+          </div>
+        </div>
+
+        <!-- CASE 3 -->
+        <div class="case-panel" id="case3" role="tabpanel">
+          <div class="cp-stat">
+            <div>
+              <div class="cp-tag">Spinoff Finance Integration</div>
+              <div class="cp-metric">$95B</div>
+              <div class="cp-metric-label">Parent organization alignment<br>achieved at go-live</div>
+            </div>
+            <div class="cp-badges">
+              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">ROI Level</span><span class="cp-badge-val">Moderate</span></div>
+              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Complexity</span><span class="cp-badge-val">High</span></div>
+              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Timeline</span><span class="cp-badge-val">1 Year Consolidation</span></div>
+              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Scope</span><span class="cp-badge-val">ERP · Finance · Compliance</span></div>
+            </div>
+          </div>
+          <div class="cp-body">
+            <div class="cp-title">Designing a High-Impact Finance Structure After a Spinoff</div>
+            <div class="cp-sections">
+              <div class="cp-section">
+                <div class="cp-section-head open" onclick="toggleSection(this)">
+                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-alert-triangle"></i></div><span class="cp-section-name">The Challenge</span></div>
+                  <span class="cp-section-arrow">&#8964;</span>
+                </div>
+                <div class="cp-section-body open"><p>The acquisition of an early-stage private business introduced new operational and regulatory complexities, exposing the need for stronger financial governance, standardized controls, and a comprehensive compliance framework to align with public-company expectations.</p></div>
+              </div>
+              <div class="cp-section">
+                <div class="cp-section-head" onclick="toggleSection(this)">
+                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-user-check"></i></div><span class="cp-section-name">What I Did</span></div>
+                  <span class="cp-section-arrow">&#8964;</span>
+                </div>
+                <div class="cp-section-body"><p>Led the end-to-end finance and ERP integration for the newly spun-off company, ensuring full alignment across people, processes, systems, and data. From initial assessment through go-live, established a scalable finance infrastructure that delivered operational efficiency, compliance with public-company standards, and readiness to support long-term strategic growth.</p></div>
+              </div>
+              <div class="cp-section">
+                <div class="cp-section-head" onclick="toggleSection(this)">
+                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-bulb"></i></div><span class="cp-section-name">The Solution</span></div>
+                  <span class="cp-section-arrow">&#8964;</span>
+                </div>
+                <div class="cp-section-body"><p>Developed a finance architecture that harmonized systems and processes from the $95B parent organization, embedding robust compliance controls and governance mechanisms to meet legal and regulatory standards. The framework addressed people, process, systems, and data simultaneously — ensuring nothing was left behind at go-live.</p></div>
+              </div>
+              <div class="cp-section">
+                <div class="cp-section-head" onclick="toggleSection(this)">
+                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-chart-bar"></i></div><span class="cp-section-name">Impact</span></div>
+                  <span class="cp-section-arrow">&#8964;</span>
+                </div>
+                <div class="cp-section-body"><p>The acquired company successfully consolidated its operations within one year, achieving full regulatory compliance while maintaining reporting accuracy and uninterrupted period-close performance. The resulting finance structure positioned the business for sustainable growth under public-company scrutiny.</p></div>
+              </div>
+            </div>
+            <a href="/capital-event-finance-readiness.html" style="display:inline-flex; align-items:center; gap:6px; margin-top:22px; font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; letter-spacing:.02em; color:var(--gold);">Read the full story →</a>
+          </div>
+        </div>
+
+        <!-- CASE 4 -->
+        <div class="case-panel" id="case4" role="tabpanel">
+          <div class="cp-stat">
+            <div>
+              <div class="cp-tag">Controls &amp; Risk Remediation</div>
+              <div class="cp-metric">&lt;2 Yrs</div>
+              <div class="cp-metric-label">Full material weakness<br>remediation achieved</div>
+            </div>
+            <div class="cp-badges">
+              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">ROI Level</span><span class="cp-badge-val">Moderate</span></div>
+              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Complexity</span><span class="cp-badge-val">High</span></div>
+              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Company Size</span><span class="cp-badge-val">$13B Public Co.</span></div>
+              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Prior Investment</span><span class="cp-badge-val">$6M Controls Spend</span></div>
+            </div>
+          </div>
+          <div class="cp-body">
+            <div class="cp-title">Remediating Material Weaknesses with Bottom-Line Impact</div>
+            <div class="cp-sections">
+              <div class="cp-section">
+                <div class="cp-section-head open" onclick="toggleSection(this)">
+                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-alert-triangle"></i></div><span class="cp-section-name">The Challenge</span></div>
+                  <span class="cp-section-arrow">&#8964;</span>
+                </div>
+                <div class="cp-section-body open"><p>A $13B publicly traded company invested $6M to strengthen its internal controls; however, persistent material weaknesses revealed ongoing deficiencies in compliance, governance, and risk management effectiveness. Despite significant spend, the underlying causes remained unresolved.</p></div>
+              </div>
+              <div class="cp-section">
+                <div class="cp-section-head" onclick="toggleSection(this)">
+                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-user-check"></i></div><span class="cp-section-name">What I Did</span></div>
+                  <span class="cp-section-arrow">&#8964;</span>
+                </div>
+                <div class="cp-section-body"><p>Partnered with business leaders and external auditors to design a structured project plan addressing the underlying causes of inefficiencies. The resulting actions improved control rigor, reduced unnecessary expenditures, and strengthened compliance oversight — going beyond surface-level fixes to eliminate root causes.</p></div>
+              </div>
+              <div class="cp-section">
+                <div class="cp-section-head" onclick="toggleSection(this)">
+                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-bulb"></i></div><span class="cp-section-name">The Solution</span></div>
+                  <span class="cp-section-arrow">&#8964;</span>
+                </div>
+                <div class="cp-section-body"><p>Designed a comprehensive project plan engaging key stakeholders and external auditors to identify the root causes of inefficiencies and implement a strategy to eliminate unnecessary spending while strengthening compliance controls. The approach linked control improvements directly to cost reduction — making the business case undeniable.</p></div>
+              </div>
+              <div class="cp-section">
+                <div class="cp-section-head" onclick="toggleSection(this)">
+                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-chart-bar"></i></div><span class="cp-section-name">Impact</span></div>
+                  <span class="cp-section-arrow">&#8964;</span>
+                </div>
+                <div class="cp-section-body"><p>Achieved full remediation of material weaknesses in under two years, enhancing internal control effectiveness and mitigating compliance risk. The effort delivered measurable cost savings by eliminating recurring audit-related expenses and inefficiency-driven spending — turning a $6M control problem into a sustainable governance advantage.</p></div>
+              </div>
+            </div>
+            <a href="/material-weakness-remediation.html" style="display:inline-flex; align-items:center; gap:6px; margin-top:22px; font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; letter-spacing:.02em; color:var(--gold);">Read the full story →</a>
+          </div>
+        </div>
+
+      </div><!-- /case-panels -->
+      <div class="engagement-note"><strong>Designed as proof, not promotion.</strong> These cases reflect operator credibility built across public companies, private equity portfolios, and high-complexity transitions — where judgment and execution discipline drove the outcome.</div>
     </div>
   </section>
 
@@ -844,250 +1112,6 @@
     </div>
   </section>
 
-  <section class="selected-engagements" id="selected-engagements">
-    <div class="container">
-      <div class="engagement-intro">
-        <div class="section-kicker">Selected Engagements</div>
-        <h2>Four engagements. Real stakes. Measurable outcomes.</h2>
-        <p>Representative transformation work across finance, governance, controls, operating model design, and strategic cost management. Each case reflects judgment under pressure — not just execution.</p>
-      </div>
-
-      <!-- TAB BAR -->
-      <div class="case-tabs" role="tablist">
-        <button class="case-tab active" role="tab" aria-selected="true" data-panel="case1" onclick="switchCase(this,'case1')">
-          <span class="ct-label">Retail Finance</span>
-          <span class="ct-title">Transforming Retail Finance to Drive Strategic Decisions &amp; ROI</span>
-          <span class="ct-metric">$3M</span>
-        </button>
-        <button class="case-tab" role="tab" aria-selected="false" data-panel="case2" onclick="switchCase(this,'case2')">
-          <span class="ct-label">Cost Optimization</span>
-          <span class="ct-title">Driving Profitability Through Indirect Spend Optimization</span>
-          <span class="ct-metric">$2M+</span>
-        </button>
-        <button class="case-tab" role="tab" aria-selected="false" data-panel="case3" onclick="switchCase(this,'case3')">
-          <span class="ct-label">Finance Integration</span>
-          <span class="ct-title">Designing a High-Impact Finance Structure After a Spinoff</span>
-          <span class="ct-metric">$95B</span>
-        </button>
-        <button class="case-tab" role="tab" aria-selected="false" data-panel="case4" onclick="switchCase(this,'case4')">
-          <span class="ct-label">Controls &amp; Risk</span>
-          <span class="ct-title">Remediating Material Weaknesses with Bottom-Line Impact</span>
-          <span class="ct-metric">&lt;2 Yrs</span>
-        </button>
-      </div>
-
-      <!-- PANELS -->
-      <div class="case-panels">
-
-        <!-- CASE 1 -->
-        <div class="case-panel active" id="case1" role="tabpanel">
-          <div class="cp-stat">
-            <div>
-              <div class="cp-tag">Retail Finance Transformation</div>
-              <div class="cp-metric">$3M</div>
-              <div class="cp-metric-label">Board-approved transformation<br>investment secured</div>
-            </div>
-            <div class="cp-badges">
-              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">ROI Level</span><span class="cp-badge-val">High</span></div>
-              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Complexity</span><span class="cp-badge-val">High</span></div>
-              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Stakeholders</span><span class="cp-badge-val">CFO · CAO · CEO</span></div>
-              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Focus Area</span><span class="cp-badge-val">Finance Transformation</span></div>
-            </div>
-          </div>
-          <div class="cp-body">
-            <div class="cp-title">Transforming Retail Finance to Drive Strategic Decisions and ROI</div>
-            <div class="cp-sections">
-              <div class="cp-section">
-                <div class="cp-section-head open" onclick="toggleSection(this)">
-                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-alert-triangle"></i></div><span class="cp-section-name">The Challenge</span></div>
-                  <span class="cp-section-arrow">&#8964;</span>
-                </div>
-                <div class="cp-section-body open"><p>A retail enterprise experiencing rapid growth faced critical challenges within its finance function, impacting operational efficiency and strategic decision-making. Key concerns included data integrity issues across disparate systems, manual paper-based processes creating operational bottlenecks, and legacy reporting capabilities misaligned with the CFO's strategic vision.</p></div>
-              </div>
-              <div class="cp-section">
-                <div class="cp-section-head" onclick="toggleSection(this)">
-                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-user-check"></i></div><span class="cp-section-name">What I Did</span></div>
-                  <span class="cp-section-arrow">&#8964;</span>
-                </div>
-                <div class="cp-section-body"><p>I identified a strategic misalignment between the CFO's expectations and ongoing finance projects. Collaborating closely with the CFO and CAO, I clarified strategic objectives and uncovered barriers affecting financial data. Through stakeholder engagement across departments, I mapped the organizational structure and analyzed current processes, systems, and data flows — identifying root causes of inefficiencies and their broader impact on finance strategy.</p></div>
-              </div>
-              <div class="cp-section">
-                <div class="cp-section-head" onclick="toggleSection(this)">
-                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-bulb"></i></div><span class="cp-section-name">The Solution</span></div>
-                  <span class="cp-section-arrow">&#8964;</span>
-                </div>
-                <div class="cp-section-body"><p>The finance portfolio was reassessed and realigned with organizational objectives. This diagnostic provided insights into operational gaps between the CFO's strategic goals and execution capabilities — specifically in human resources, process optimization, technology infrastructure, and data utilization. Findings were proactively presented to the CEO with a clear transformation roadmap.</p></div>
-              </div>
-              <div class="cp-section">
-                <div class="cp-section-head" onclick="toggleSection(this)">
-                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-chart-bar"></i></div><span class="cp-section-name">Impact</span></div>
-                  <span class="cp-section-arrow">&#8964;</span>
-                </div>
-                <div class="cp-section-body"><p>Successfully secured a $3M board-approved capital investment, demonstrating commitment to company-wide transformation and strategic alignment. The initiative established a clear path to eliminating data integrity issues, automating manual processes, and building reporting capabilities aligned with the CFO's long-term vision.</p></div>
-              </div>
-            </div>
-            <a href="/retail-finance-growth-readiness.html" style="display:inline-flex; align-items:center; gap:6px; margin-top:22px; font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; letter-spacing:.02em; color:var(--gold);">Read the full story →</a>
-          </div>
-        </div>
-
-        <!-- CASE 2 -->
-        <div class="case-panel" id="case2" role="tabpanel">
-          <div class="cp-stat">
-            <div>
-              <div class="cp-tag">Indirect Spend Optimization</div>
-              <div class="cp-metric">$2M+</div>
-              <div class="cp-metric-label">T&amp;E surge identified and<br>spend levers unlocked</div>
-            </div>
-            <div class="cp-badges">
-              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">ROI Level</span><span class="cp-badge-val">Moderate</span></div>
-              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Complexity</span><span class="cp-badge-val">High</span></div>
-              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Top Drivers</span><span class="cp-badge-val">Marketing · Logistics · IT</span></div>
-              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Largest Category</span><span class="cp-badge-val">Marketing $100M</span></div>
-            </div>
-          </div>
-          <div class="cp-body">
-            <div class="cp-title">Driving Profitability Through Indirect Spend Optimization</div>
-            <div class="cp-sections">
-              <div class="cp-section">
-                <div class="cp-section-head open" onclick="toggleSection(this)">
-                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-alert-triangle"></i></div><span class="cp-section-name">The Challenge</span></div>
-                  <span class="cp-section-arrow">&#8964;</span>
-                </div>
-                <div class="cp-section-body open"><p>A publicly traded company reported a $2M surge in travel and entertainment (T&amp;E) expenses within a single fiscal year — signaling underlying inefficiencies, weak spend controls, and untapped opportunities for strategic cost optimization.</p></div>
-              </div>
-              <div class="cp-section">
-                <div class="cp-section-head" onclick="toggleSection(this)">
-                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-user-check"></i></div><span class="cp-section-name">What I Did</span></div>
-                  <span class="cp-section-arrow">&#8964;</span>
-                </div>
-                <div class="cp-section-body"><p>Performed an enterprise-wide analysis of indirect spend using detailed data modeling and stakeholder interviews. Findings revealed that Marketing, Logistics, and IT — not T&amp;E — were the primary cost drivers. The resulting insights guided a targeted cost-optimization plan designed to mitigate financial exposure and enhance operational efficiency.</p></div>
-              </div>
-              <div class="cp-section">
-                <div class="cp-section-head" onclick="toggleSection(this)">
-                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-bulb"></i></div><span class="cp-section-name">The Solution</span></div>
-                  <span class="cp-section-arrow">&#8964;</span>
-                </div>
-                <div class="cp-section-body"><p>Leveraging advanced data analytics, the company identified the primary drivers of indirect spending — Marketing ($100M), Logistics ($40M), and IT ($12M). A deep analysis of spend patterns, operational trends, and departmental practices revealed concentrated cost areas and inefficiencies. These insights shaped a focused roadmap to rationalize expenditures and optimize resource allocation.</p></div>
-              </div>
-              <div class="cp-section">
-                <div class="cp-section-head" onclick="toggleSection(this)">
-                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-chart-bar"></i></div><span class="cp-section-name">Impact</span></div>
-                  <span class="cp-section-arrow">&#8964;</span>
-                </div>
-                <div class="cp-section-body"><p>Pinpointed inefficiencies contributing to the $2M T&amp;E surge and executed a vendor-led optimization initiative to standardize processes and strengthen controls. Further identified indirect spend levers across Marketing, Logistics, and IT for additional cost optimization and measurable bottom-line ROI improvement.</p></div>
-              </div>
-            </div>
-            <a href="/indirect-spend-optimization.html" style="display:inline-flex; align-items:center; gap:6px; margin-top:22px; font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; letter-spacing:.02em; color:var(--gold);">Read the full story →</a>
-          </div>
-        </div>
-
-        <!-- CASE 3 -->
-        <div class="case-panel" id="case3" role="tabpanel">
-          <div class="cp-stat">
-            <div>
-              <div class="cp-tag">Spinoff Finance Integration</div>
-              <div class="cp-metric">$95B</div>
-              <div class="cp-metric-label">Parent organization alignment<br>achieved at go-live</div>
-            </div>
-            <div class="cp-badges">
-              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">ROI Level</span><span class="cp-badge-val">Moderate</span></div>
-              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Complexity</span><span class="cp-badge-val">High</span></div>
-              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Timeline</span><span class="cp-badge-val">1 Year Consolidation</span></div>
-              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Scope</span><span class="cp-badge-val">ERP · Finance · Compliance</span></div>
-            </div>
-          </div>
-          <div class="cp-body">
-            <div class="cp-title">Designing a High-Impact Finance Structure After a Spinoff</div>
-            <div class="cp-sections">
-              <div class="cp-section">
-                <div class="cp-section-head open" onclick="toggleSection(this)">
-                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-alert-triangle"></i></div><span class="cp-section-name">The Challenge</span></div>
-                  <span class="cp-section-arrow">&#8964;</span>
-                </div>
-                <div class="cp-section-body open"><p>The acquisition of an early-stage private business introduced new operational and regulatory complexities, exposing the need for stronger financial governance, standardized controls, and a comprehensive compliance framework to align with public-company expectations.</p></div>
-              </div>
-              <div class="cp-section">
-                <div class="cp-section-head" onclick="toggleSection(this)">
-                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-user-check"></i></div><span class="cp-section-name">What I Did</span></div>
-                  <span class="cp-section-arrow">&#8964;</span>
-                </div>
-                <div class="cp-section-body"><p>Led the end-to-end finance and ERP integration for the newly spun-off company, ensuring full alignment across people, processes, systems, and data. From initial assessment through go-live, established a scalable finance infrastructure that delivered operational efficiency, compliance with public-company standards, and readiness to support long-term strategic growth.</p></div>
-              </div>
-              <div class="cp-section">
-                <div class="cp-section-head" onclick="toggleSection(this)">
-                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-bulb"></i></div><span class="cp-section-name">The Solution</span></div>
-                  <span class="cp-section-arrow">&#8964;</span>
-                </div>
-                <div class="cp-section-body"><p>Developed a finance architecture that harmonized systems and processes from the $95B parent organization, embedding robust compliance controls and governance mechanisms to meet legal and regulatory standards. The framework addressed people, process, systems, and data simultaneously — ensuring nothing was left behind at go-live.</p></div>
-              </div>
-              <div class="cp-section">
-                <div class="cp-section-head" onclick="toggleSection(this)">
-                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-chart-bar"></i></div><span class="cp-section-name">Impact</span></div>
-                  <span class="cp-section-arrow">&#8964;</span>
-                </div>
-                <div class="cp-section-body"><p>The acquired company successfully consolidated its operations within one year, achieving full regulatory compliance while maintaining reporting accuracy and uninterrupted period-close performance. The resulting finance structure positioned the business for sustainable growth under public-company scrutiny.</p></div>
-              </div>
-            </div>
-            <a href="/capital-event-finance-readiness.html" style="display:inline-flex; align-items:center; gap:6px; margin-top:22px; font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; letter-spacing:.02em; color:var(--gold);">Read the full story →</a>
-          </div>
-        </div>
-
-        <!-- CASE 4 -->
-        <div class="case-panel" id="case4" role="tabpanel">
-          <div class="cp-stat">
-            <div>
-              <div class="cp-tag">Controls &amp; Risk Remediation</div>
-              <div class="cp-metric">&lt;2 Yrs</div>
-              <div class="cp-metric-label">Full material weakness<br>remediation achieved</div>
-            </div>
-            <div class="cp-badges">
-              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">ROI Level</span><span class="cp-badge-val">Moderate</span></div>
-              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Complexity</span><span class="cp-badge-val">High</span></div>
-              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Company Size</span><span class="cp-badge-val">$13B Public Co.</span></div>
-              <div class="cp-badge"><span class="cp-badge-dot"></span><span class="cp-badge-text">Prior Investment</span><span class="cp-badge-val">$6M Controls Spend</span></div>
-            </div>
-          </div>
-          <div class="cp-body">
-            <div class="cp-title">Remediating Material Weaknesses with Bottom-Line Impact</div>
-            <div class="cp-sections">
-              <div class="cp-section">
-                <div class="cp-section-head open" onclick="toggleSection(this)">
-                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-alert-triangle"></i></div><span class="cp-section-name">The Challenge</span></div>
-                  <span class="cp-section-arrow">&#8964;</span>
-                </div>
-                <div class="cp-section-body open"><p>A $13B publicly traded company invested $6M to strengthen its internal controls; however, persistent material weaknesses revealed ongoing deficiencies in compliance, governance, and risk management effectiveness. Despite significant spend, the underlying causes remained unresolved.</p></div>
-              </div>
-              <div class="cp-section">
-                <div class="cp-section-head" onclick="toggleSection(this)">
-                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-user-check"></i></div><span class="cp-section-name">What I Did</span></div>
-                  <span class="cp-section-arrow">&#8964;</span>
-                </div>
-                <div class="cp-section-body"><p>Partnered with business leaders and external auditors to design a structured project plan addressing the underlying causes of inefficiencies. The resulting actions improved control rigor, reduced unnecessary expenditures, and strengthened compliance oversight — going beyond surface-level fixes to eliminate root causes.</p></div>
-              </div>
-              <div class="cp-section">
-                <div class="cp-section-head" onclick="toggleSection(this)">
-                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-bulb"></i></div><span class="cp-section-name">The Solution</span></div>
-                  <span class="cp-section-arrow">&#8964;</span>
-                </div>
-                <div class="cp-section-body"><p>Designed a comprehensive project plan engaging key stakeholders and external auditors to identify the root causes of inefficiencies and implement a strategy to eliminate unnecessary spending while strengthening compliance controls. The approach linked control improvements directly to cost reduction — making the business case undeniable.</p></div>
-              </div>
-              <div class="cp-section">
-                <div class="cp-section-head" onclick="toggleSection(this)">
-                  <div class="cp-section-label"><div class="cp-section-icon"><i class="ti ti-chart-bar"></i></div><span class="cp-section-name">Impact</span></div>
-                  <span class="cp-section-arrow">&#8964;</span>
-                </div>
-                <div class="cp-section-body"><p>Achieved full remediation of material weaknesses in under two years, enhancing internal control effectiveness and mitigating compliance risk. The effort delivered measurable cost savings by eliminating recurring audit-related expenses and inefficiency-driven spending — turning a $6M control problem into a sustainable governance advantage.</p></div>
-              </div>
-            </div>
-            <a href="/material-weakness-remediation.html" style="display:inline-flex; align-items:center; gap:6px; margin-top:22px; font-family:'Space Mono',monospace; font-size:12.5px; font-weight:700; letter-spacing:.02em; color:var(--gold);">Read the full story →</a>
-          </div>
-        </div>
-
-      </div><!-- /case-panels -->
-
-      <div class="engagement-note"><strong>Designed as proof, not promotion.</strong> These cases reflect operator credibility built across public companies, private equity portfolios, and high-complexity transitions — where judgment and execution discipline drove the outcome.</div>
-    </div>
-  </section>
 
   <script>
     function switchCase(btn, panelId) {
